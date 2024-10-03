@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgslbrvmtnoy4"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_5kd2x"]
+[ext_resource type="PackedScene" uid="uid://hwkalafd8msv" path="res://intro_bg.tscn" id="2_1m5gl"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_5kd2x")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 523.0
+offset_top = 547.0
+offset_right = 709.0
+offset_bottom = 626.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 523.0
+offset_top = 652.0
+offset_right = 707.0
+offset_bottom = 729.0
+text = "Quit"
+
+[node name="GameLogo" type="Label" parent="."]
+offset_left = 334.0
+offset_top = 116.0
+offset_right = 894.0
+offset_bottom = 298.0
+text = "Add game logo here
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_1m5gl")]
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
