@@ -11,13 +11,18 @@
 script = ExtResource("1_7fn85")
 
 [node name="Clear_sky_layer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(1195, 0)
+motion_mirroring = Vector2(2391, 0)
 
 [node name="Sky" type="Sprite2D" parent="Clear_sky_layer"]
 position = Vector2(601, 391.5)
 scale = Vector2(3.11979, 3.625)
 texture = ExtResource("2_qiw4l")
 metadata/_edit_lock_ = true
+
+[node name="Sky2" type="Sprite2D" parent="Clear_sky_layer"]
+position = Vector2(1798, 391)
+scale = Vector2(3.11979, 3.625)
+texture = ExtResource("2_qiw4l")
 
 [node name="Mountain_layer" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0.1, 1)
