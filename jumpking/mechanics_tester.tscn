@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://uf7j4orovk2m"]
+
+[ext_resource type="PackedScene" uid="uid://417tpl4m8gus" path="res://Player/Player.tscn" id="1_w8jg5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30ukd"]
+size = Vector2(1201, 113.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mybyj"]
+size = Vector2(354, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryykl"]
+size = Vector2(386, 260.5)
+
+[node name="Mechanics_Tester_World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_w8jg5")]
+position = Vector2(594, 640)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(598.5, 723.75)
+shape = SubResource("RectangleShape2D_30ukd")
+
+[node name="Panel" type="Panel" parent="StaticBody2D/CollisionShape2D"]
+offset_left = -599.0
+offset_top = -61.0
+offset_right = 600.0
+offset_bottom = 55.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(908, 612)
+shape = SubResource("RectangleShape2D_mybyj")
+
+[node name="Panel" type="Panel" parent="StaticBody2D/CollisionShape2D2"]
+offset_left = -175.0
+offset_top = -47.0
+offset_right = 179.0
+offset_bottom = 54.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(243, 535.25)
+shape = SubResource("RectangleShape2D_ryykl")
+
+[node name="Panel" type="Panel" parent="StaticBody2D/CollisionShape2D3"]
+offset_left = -191.0
+offset_top = -128.0
+offset_right = 193.0
+offset_bottom = 128.0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 89.0
+offset_bottom = 47.0
+text = "X
+"
+
+[connection signal="pressed" from="Button" to="Player" method="_on_button_pressed"]
