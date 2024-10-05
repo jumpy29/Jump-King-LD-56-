@@ -29,13 +29,13 @@ text = "Quit"
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_1m5gl")]
 
 [node name="Sky" type="Sprite2D" parent="."]
-position = Vector2(624, 1984.5)
-scale = Vector2(3.22917, 10.7361)
+position = Vector2(663, 2344.5)
+scale = Vector2(5.15104, 14.125)
 texture = ExtResource("4_fdaxi")
 
 [node name="Sky2" type="Sprite2D" parent="."]
-position = Vector2(738.5, -444)
-scale = Vector2(3.84635, 4.13889)
+position = Vector2(561.5, -817)
+scale = Vector2(4.76823, 7.59259)
 texture = ExtResource("4_fdaxi")
 
 [node name="Player" parent="." instance=ExtResource("3_jgghc")]
