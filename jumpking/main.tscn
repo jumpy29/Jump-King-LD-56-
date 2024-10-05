@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgslbrvmtnoy4"]
+[gd_scene load_steps=7 format=3 uid="uid://bgslbrvmtnoy4"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5kd2x"]
 [ext_resource type="PackedScene" uid="uid://hwkalafd8msv" path="res://intro_bg.tscn" id="2_1m5gl"]
 [ext_resource type="PackedScene" uid="uid://417tpl4m8gus" path="res://Player/Player.tscn" id="3_jgghc"]
+[ext_resource type="Texture2D" uid="uid://ce65a5uhqd0ty" path="res://assets/intro_bg/sky.png" id="4_fdaxi"]
+[ext_resource type="Texture2D" uid="uid://cm7q6i26m3ss2" path="res://assets/intro_bg/cloud_lonely.png" id="5_bljuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1qd22"]
 size = Vector2(164, 38.5)
@@ -11,30 +13,67 @@ size = Vector2(164, 38.5)
 script = ExtResource("1_5kd2x")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 523.0
-offset_top = 547.0
-offset_right = 709.0
-offset_bottom = 626.0
+offset_left = 409.0
+offset_top = 461.0
+offset_right = 535.0
+offset_bottom = 497.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 523.0
-offset_top = 652.0
-offset_right = 707.0
-offset_bottom = 729.0
+offset_left = 710.0
+offset_top = 462.0
+offset_right = 832.0
+offset_bottom = 498.0
 text = "Quit"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_1m5gl")]
 
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(624, 1984.5)
+scale = Vector2(3.22917, 10.7361)
+texture = ExtResource("4_fdaxi")
+
+[node name="Sky2" type="Sprite2D" parent="."]
+position = Vector2(738.5, -444)
+scale = Vector2(3.84635, 4.13889)
+texture = ExtResource("4_fdaxi")
+
 [node name="Player" parent="." instance=ExtResource("3_jgghc")]
-position = Vector2(627, -88)
+position = Vector2(633, -412)
 scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Player_temp_floor" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player_temp_floor"]
-position = Vector2(624, 356)
+position = Vector2(624, 291)
 shape = SubResource("RectangleShape2D_1qd22")
+
+[node name="Player_temp_floor2" type="StaticBody2D" parent="."]
+position = Vector2(0, 1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_temp_floor2"]
+position = Vector2(632, 1723)
+shape = SubResource("RectangleShape2D_1qd22")
+
+[node name="CloudLonely" type="Sprite2D" parent="."]
+position = Vector2(108, 1842)
+texture = ExtResource("5_bljuu")
+
+[node name="CloudLonely4" type="Sprite2D" parent="."]
+position = Vector2(830, 2096)
+texture = ExtResource("5_bljuu")
+
+[node name="CloudLonely2" type="Sprite2D" parent="."]
+position = Vector2(240, 1154.5)
+scale = Vector2(1.28125, 1.31019)
+texture = ExtResource("5_bljuu")
+
+[node name="CloudLonely3" type="Sprite2D" parent="."]
+position = Vector2(811, 1439.5)
+scale = Vector2(1.30208, 1.18056)
+texture = ExtResource("5_bljuu")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

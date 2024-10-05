@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://uf7j4orovk2m"]
+[gd_scene load_steps=6 format=3 uid="uid://uf7j4orovk2m"]
 
+[ext_resource type="Texture2D" uid="uid://ce65a5uhqd0ty" path="res://assets/intro_bg/sky.png" id="1_cbnfy"]
 [ext_resource type="PackedScene" uid="uid://417tpl4m8gus" path="res://Player/Player.tscn" id="1_w8jg5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_30ukd"]
@@ -13,8 +14,14 @@ size = Vector2(386, 260.5)
 
 [node name="Mechanics_Tester_World" type="Node2D"]
 
+[node name="Sky" type="Sprite2D" parent="."]
+position = Vector2(607, -2.50009)
+scale = Vector2(3.09896, 7.19908)
+texture = ExtResource("1_cbnfy")
+
 [node name="Player" parent="." instance=ExtResource("1_w8jg5")]
-position = Vector2(594, 640)
+position = Vector2(605, 88)
+scale = Vector2(3, 3)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -49,10 +56,10 @@ offset_right = 193.0
 offset_bottom = 128.0
 
 [node name="Button" type="Button" parent="."]
-offset_left = 14.0
-offset_top = 12.0
-offset_right = 89.0
-offset_bottom = 47.0
+offset_left = 25.0
+offset_top = 13.0
+offset_right = 100.0
+offset_bottom = 48.0
 text = "X
 "
 
